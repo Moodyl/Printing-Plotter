@@ -1,6 +1,6 @@
     let canva;
     let capture;
-    let stepSize;
+    let stepSize = 10;
     
 
     function setup() {
