@@ -1,0 +1,102 @@
+@import url("https://use.typekit.net/nby0uty.css");
+
+*,
+html,
+body {
+    font-family: chainprinter, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 11px;
+    color: #222;
+}
+
+h1 {
+    font-size: 72px;
+    background-color: #222;
+    color: #fff;
+    display: block;
+    width: fit-content;
+    margin: 15px;
+    padding: 10px;
+    width: 400px;
+}
+
+h3 {
+    font-size: 32px;
+}
+
+h5 {
+    font-size: 18px;
+    flex-basis: 100%;
+}
+
+.description {
+    width: 400px;
+    margin: 15px;
+}
+
+.interface {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 400px;
+}
+
+.interface>div {
+    margin: 20px 0 50px;
+    border-top: 1px solid black;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.interface>div label {
+    margin: 10px 0;
+    cursor: pointer;
+    outline: 1px solid blue;
+    padding: 5px;
+    flex-basis: 24%;
+    color: blue;
+
+}
+
+.interface>div label:hover {
+    color: white;
+    background-color: blue;
+
+}
+
+.interface input {
+    display: none;
+}
+
+.size {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.size div {
+    flex-basis: 1;
+    flex-grow: 1;
+}
+
+.size div:nth-of-type(2) {
+    text-align: center;
+}
+
+.size div:last-of-type {
+    text-align: right;
+}
+
+.swatch {
+    width: 20px;
+    height: 20px;
+    border: 1px blue solid;
+    margin: 5px;
+    vertical-align: middle;
+    float: right;
+}

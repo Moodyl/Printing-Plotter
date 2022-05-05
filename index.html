@@ -5,24 +5,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>10Print</title>
 </head>
 
 <body>
-    <canvas width="400" height="400"></canvas>
-    <script>
-        let capture;
+    <h1>Printing<br>Press</h1>
+    <div class="description">
+        <h3>Description</h3>
+        A plotter is a machine that produces vector graphics drawings. Plotters draw lines on paper using a pen, or in
+        some applications, use a knife to cut a material like vinyl or leather. In the latter case, they are sometimes
+        known as a cutting plotter.<br><br>
+        In the past, plotters were used in applications such as computer-aided design, as they were able to produce line
+        drawings much faster and of a higher quality than contemporary conventional printers. Smaller desktop plotters
+        were often used for business graphics. Printers with graphics capabilities took away some of the market by the
+        early 1980s, and the introduction of laser printers in the mid-1980s largely eliminated the use of plotters from
+        most roles.<br><br>
+        Plotters retained a niche for producing very large drawings for many years, but have now largely been replaced
+        by wide-format conventional printers. Cutting plotters remain in use in a number of industries.
+    </div>
+    <div class="interface">
+        <div class="size">
+            <div>Smaller</div>
+            <div><var id="stepSize-output"></var> px</div>
+            <div>Bigger</div>
+            <h5>Size</h5>
+        </div>
+        <div class="pattern">
+            <h5>Pattern</h5>
+            <label for="line">Line</label>
+            <input type="radio" name="pickShape" id="line" checked>
 
-        function setup() {
-            createCanvas(400, 400);
-            capture = createCapture(VIDEO);
-            capture.hide();
-        
-            while(true){
-                image(capture, 0, 0, width, width * capture.height / capture.width);
-            }
-        }
-    </script>
+            <label for="zig-zag">Zig-Zag</label>
+            <input type="radio" name="pickShape" id="zig-zag">
+
+            <label for="curve">Curve</label>
+            <input type="radio" name="pickShape" id="curve">
+
+            <label for="squiggle">Squiggle</label>
+            <input type="radio" name="pickShape" id="squiggle">
+        </div>
+
+        <div>
+            <h5>Color</h5>
+            <label for="yellow">Yellow<div class="swatch" style="background-color: #ffd500;"></div></label>
+            <input type="radio" name="pickColor" id="yellow" value="#ffd500" checked>
+
+            <label for="cyan">Cyan<div class="swatch" style="background-color:#00aaff"></div></label>
+            <input type="radio" name="pickColor" id="cyan" value="#00aaff">
+
+            <label for="magenta">Magenta<div class="swatch" style="background-color:#ff00bb"></div></label>
+            <input type="radio" name="pickColor" id="magenta" value="#ff00bb">
+
+            <label for="black">Black<div class="swatch" style="background-color:#222222"></div></label>
+            <input type="radio" name="pickColor" id="black" value="#222222">
+        </div>
+    </div>
+    <div id="output"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
