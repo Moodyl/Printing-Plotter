@@ -25,10 +25,12 @@ h1 {
     margin: 15px;
     padding: 10px;
     width: 400px;
+    line-height: 72px;
 }
 
 h3 {
     font-size: 32px;
+    margin-bottom: 5px;
 }
 
 h5 {

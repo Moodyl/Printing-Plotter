@@ -1,6 +1,7 @@
     let canva;
     let capture;
     let stepSize;
+    
 
     function setup() {
 
@@ -30,7 +31,6 @@
         }
 
         background(240);
-
 
         capture.loadPixels();
 
