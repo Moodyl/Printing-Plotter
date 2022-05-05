@@ -9,6 +9,7 @@ body {
     box-sizing: border-box;
     font-size: 11px;
     color: #222;
+    cursor: crosshair;
 }
 
 a {
