@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>10Print</title>
+    <title>Printing Plotter</title>
 </head>
 
 <body>
-    <h1>Printing<br>Press</h1>
+    <a href="https://ixd-supsi.github.io/specchiodellemiebrame/">INDEX</a>
+    <h1>Printing<br>Plotter</h1>
     <div class="description">
         <h3>Description</h3>
         A plotter is a machine that produces vector graphics drawings. Plotters draw lines on paper using a pen, or in
@@ -26,10 +27,11 @@
     </div>
     <div class="interface">
         <div class="size">
+            <span>Slide the cursor horizontally in the window to change size</span>
+            <h5>Size</h5>
             <div>Smaller</div>
             <div><var id="stepSize-output"></var> px</div>
             <div>Bigger</div>
-            <h5>Size</h5>
         </div>
         <div class="pattern">
             <h5>Pattern</h5>
@@ -60,8 +62,8 @@
             <label for="black">Black<div class="swatch" style="background-color:#222222"></div></label>
             <input type="radio" name="pickColor" id="black" value="#222222">
         </div>
+        <div id="save-output" onclick="saveButton()">Save image</div>
     </div>
-    <div id="output"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"></script>
     <script src="script.js"></script>

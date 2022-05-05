@@ -1,7 +1,6 @@
-
-
     let canva;
     let capture;
+    let stepSize;
 
     function setup() {
 
@@ -22,8 +21,13 @@
 
     function draw() {
 
-        stepSize = round(constrain(map(mouseX, 0, canva.width, 2, 25), 2, 25));
-        document.getElementById('stepSize-output').innerHTML = stepSize;
+        let mx = mouseX;
+        let my = mouseY;
+        
+        if (0 < mx && mx < canva.width && 0 < my && my < canva.height) {
+            stepSize = round(map(mx, 0, canva.width, 2, 20));
+            document.getElementById('stepSize-output').innerHTML = stepSize;
+        }
 
         background(240);
 
@@ -80,7 +84,6 @@
                         )
                         break;
                     case "squiggle":
-                        for (let k = 0; k < 6; k++) {
                             bezier(
                                 i * stepSize + getRndInteger(0, stepSize / 2),
                                 j * stepSize + getRndInteger(0, stepSize / 2),
@@ -94,7 +97,6 @@
                                 i * stepSize + getRndInteger(stepSize / 2, stepSize),
                                 j * stepSize + getRndInteger(stepSize / 2, stepSize),
                             )
-                        }
 
                         function getRndInteger(min, max) {
                             return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -110,13 +112,7 @@
         rect(0, 0, width, height);
     } //fine draw
 
-    function keyTyped() {
-        if (key === "s") {
-            let thumbs = [];
-
-            let img = get();
-            thumbs.push(img);
-            img.save("Specchio", "jpg");
-
-        }
+    function saveButton() {
+        saveCanvas("Printing_Press", "jpg");
     }
+    

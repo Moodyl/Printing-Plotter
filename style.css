@@ -11,6 +11,11 @@ body {
     color: #222;
 }
 
+a {
+    margin: 20px;
+    display: block;
+}
+
 h1 {
     font-size: 72px;
     background-color: #222;
@@ -29,6 +34,7 @@ h3 {
 h5 {
     font-size: 18px;
     flex-basis: 100%;
+    margin-bottom: 10px;
 }
 
 .description {
@@ -40,22 +46,22 @@ h5 {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    bottom: 0;
+    bottom: 30px;
     left: 0;
     right: 0;
     width: 400px;
 }
 
 .interface>div {
-    margin: 20px 0 50px;
-    border-top: 1px solid black;
+    margin: 10px 0;
+    border: 0.5px solid black;
+    padding: 10px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
 }
 
 .interface>div label {
-    margin: 10px 0;
     cursor: pointer;
     outline: 1px solid blue;
     padding: 5px;
@@ -99,4 +105,23 @@ h5 {
     margin: 5px;
     vertical-align: middle;
     float: right;
+}
+
+#save-output {
+    margin: 20px 0 0 0;
+    cursor: pointer;
+    outline: 1px solid blue;
+    padding: 10px 5px;
+    color: blue;
+    border: 0;
+    
+}
+
+#save-output:hover {
+    color: white;
+    background-color: blue;
+}
+
+span {
+    font-size: 8px;
 }
