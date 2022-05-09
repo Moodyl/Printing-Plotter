@@ -12,8 +12,11 @@ body {
     cursor: crosshair;
 }
 
+body {
+    margin: 20px;
+}
+
 a {
-    margin: 15px 0 0 15px;
     display: inline-block;
     cursor: pointer;
     outline: 1px solid blue;
@@ -26,41 +29,34 @@ a:hover {
 }
 
 h1 {
-    font-size: 72px;
-    background-color: #222;
-    color: #fff;
+    font-size: 30px;
+    color: #222;
     display: block;
-    width: fit-content;
-    margin: 15px;
-    padding: 10px;
-    width: 400px;
-    line-height: 72px;
+    width: 800px;
+    margin: 15px 0px;
+    line-height: 30px;
 }
 
-h3 {
-    font-size: 32px;
-    margin-bottom: 5px;
+.description {
+    width: 400px;
+    line-height: 14px;
+}
+
+.container {
+    position: absolute;
+    right: 20%;
+    top: 20%;
+    padding: 20px;
+}
+
+#sketch-container canvas {
+    margin: 15px;
 }
 
 h5 {
     font-size: 18px;
     flex-basis: 100%;
     margin-bottom: 10px;
-}
-
-.description {
-    width: 400px;
-    margin: 15px;
-}
-
-.interface {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    bottom: 30px;
-    left: 0;
-    right: 0;
-    width: 400px;
 }
 
 .interface>div {
@@ -72,11 +68,15 @@ h5 {
     justify-content: space-between;
 }
 
+.interface .size {
+    flex-flow: column;
+}
+
 .interface>div label {
     cursor: pointer;
     outline: 1px solid blue;
     padding: 5px;
-    flex-basis: 24%;
+    flex-grow: 1;
     color: blue;
 
 }
@@ -91,24 +91,6 @@ h5 {
     display: none;
 }
 
-.size {
-    display: flex;
-    flex-flow: row nowrap;
-}
-
-.size div {
-    flex-basis: 1;
-    flex-grow: 1;
-}
-
-.size div:nth-of-type(2) {
-    text-align: center;
-}
-
-.size div:last-of-type {
-    text-align: right;
-}
-
 .swatch {
     width: 20px;
     height: 20px;
@@ -116,10 +98,14 @@ h5 {
     margin: 5px;
     vertical-align: middle;
     float: right;
+    cursor: pointer;
+}
+
+.export div {
+    flex-basis: 49.5%;
 }
 
 #save-output {
-    margin: 20px 0 0 0;
     cursor: pointer;
     outline: 1px solid blue;
     padding: 10px 5px;

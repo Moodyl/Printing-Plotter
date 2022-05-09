@@ -6,67 +6,109 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Printing Plotter</title>
+    <title>console.log(printing-plotter);</title>
 </head>
 
 <body>
     <a href="https://ixd-supsi.github.io/specchiodellemiebrame/">INDEX</a>
-    <h1>Printing<br>Plotter</h1>
+    <h1>console.log<br>(printing-plotter);</h1>
     <div class="description">
-        <h3>Description</h3>
-        A plotter is a machine that produces vector graphics drawings. Plotters draw lines on paper using a pen, or in
-        some applications, use a knife to cut a material like vinyl or leather. In the latter case, they are sometimes
-        known as a cutting plotter.<br><br>
-        In the past, plotters were used in applications such as computer-aided design, as they were able to produce line
-        drawings much faster and of a higher quality than contemporary conventional printers. Smaller desktop plotters
-        were often used for business graphics. Printers with graphics capabilities took away some of the market by the
-        early 1980s, and the introduction of laser printers in the mid-1980s largely eliminated the use of plotters from
-        most roles.<br><br>
-        Plotters retained a niche for producing very large drawings for many years, but have now largely been replaced
-        by wide-format conventional printers. Cutting plotters remain in use in a number of industries.
+        <p>
+            A plotter is a machine that produces vector graphics drawings. Plotters draw lines on paper using a pen, or in
+            some applications, use a knife to cut a material like vinyl or leather. In the latter case, they are sometimes
+            known as a cutting plotter.
+        </p>
+        <br>
+        <p>
+            In the past, plotters were used in applications such as computer-aided design, as they were able to produce line
+            drawings much faster and of a higher quality than contemporary conventional printers. Smaller desktop plotters
+            were often used for business graphics. Printers with graphics capabilities took away some of the market by the
+            early 1980s, and the introduction of laser printers in the mid-1980s largely eliminated the use of plotters from
+            most roles.
+        </p>
+        <br>
+        <p>
+            Plotters retained a niche for producing very large drawings for many years, but have now largely been replaced
+            by wide-format conventional printers. Cutting plotters remain in use in a number of industries.
+        </p>
     </div>
-    <div class="interface">
-        <div class="size">
-            <span>Slide the cursor horizontally in the window above to change size</span>
-            <h5>Size</h5>
-            <div>Smaller</div>
-            <div><var id="stepSize-output"></var> px</div>
-            <div>Bigger</div>
+
+    <div class="container">
+        <div id="sketch-container"></div>
+        <div class="interface">
+            <div class="size">
+                <span>Slide the cursor horizontally in the window above to change size</span>
+                <h5>Size</h5>
+                <div><var id="stepSize-output"></var> px</div>
+            </div>
+            <div class="pattern cyan">
+                <h5>Pattern Cyan</h5>
+                <label for="line" onclick="pickShape(0, 'line')">Line</label>
+                <input type="radio" name="shapeCyan" id="line" checked>
+                <label for="zig-zag" onclick="pickShape(0, 'zig-zag')">Zig-Zag</label>
+                <input type="radio" name="shapeCyan" id="zig-zag">
+                <label for="curve" onclick="pickShape(0, 'curve')">Curve</label>
+                <input type="radio" name="shapeCyan" id="curve">
+                <label for="squiggle" onclick="pickShape(0, 'squiggle')">Squiggle</label>
+                <input type="radio" name="shapeCyan" id="squiggle">
+                <label for="nothing" onclick="pickShape(0, 'nothing')">Nothing</label>
+                <input type="radio" name="shapeCyan" id="nothing">
+            </div>
+            <div class="pattern magenta">
+                <h5>Pattern Magenta</h5>
+                <label for="line" onclick="pickShape(1, 'line')">Line</label>
+                <input type="radio" name="shapeMagenta" id="line" checked>
+                <label for="zig-zag" onclick="pickShape(1, 'zig-zag')">Zig-Zag</label>
+                <input type="radio" name="shapeMagenta" id="zig-zag">
+                <label for="curve" onclick="pickShape(1, 'curve')">Curve</label>
+                <input type="radio" name="shapeMagenta" id="curve">
+                <label for="squiggle" onclick="pickShape(1, 'squiggle')">Squiggle</label>
+                <input type="radio" name="shapeMagenta" id="squiggle">
+                <label for="nothing" onclick="pickShape(1, 'nothing')">Nothing</label>
+                <input type="radio" name="shapeMagenta" id="nothing">
+            </div>
+            <div class="pattern yellow">
+                <h5>Pattern Yellow</h5>
+                <label for="line" onclick="pickShape(2, 'line')">Line</label>
+                <input type="radio" name="shapeYellow" id="line" checked>
+                <label for="zig-zag" onclick="pickShape(2, 'zig-zag')">Zig-Zag</label>
+                <input type="radio" name="shapeYellow" id="zig-zag">
+                <label for="curve" onclick="pickShape(2, 'curve')">Curve</label>
+                <input type="radio" name="shapeYellow" id="curve">
+                <label for="squiggle" onclick="pickShape(2, 'squiggle')">Squiggle</label>
+                <input type="radio" name="shapeYellow" id="squiggle">
+                <label for="nothing" onclick="pickShape(2, 'nothing')">Nothing</label>
+                <input type="radio" name="shapeYellow" id="nothing">
+            </div>
+            
+            <div class="export">
+                <h5>Export</h5>
+                <div id="save-output" onclick="saveButton('jpg')">Save image as JPG</div><div id="save-output" onclick="saveButton('png')">Save image as PNG</div>
+            </div>
         </div>
-        <div class="pattern">
-            <h5>Pattern</h5>
-            <label for="line">Line</label>
-            <input type="radio" name="pickShape" id="line" checked>
-
-            <label for="zig-zag">Zig-Zag</label>
-            <input type="radio" name="pickShape" id="zig-zag">
-
-            <label for="curve">Curve</label>
-            <input type="radio" name="pickShape" id="curve">
-
-            <label for="squiggle">Squiggle</label>
-            <input type="radio" name="pickShape" id="squiggle">
-        </div>
-
-        <div>
-            <h5>Color</h5>
-            <label for="yellow">Yellow<div class="swatch" style="background-color: #ffd500;"></div></label>
-            <input type="radio" name="pickColor" id="yellow" value="#ffd500">
-
-            <label for="cyan">Cyan<div class="swatch" style="background-color:#00aaff"></div></label>
-            <input type="radio" name="pickColor" id="cyan" value="#00aaff">
-
-            <label for="magenta">Magenta<div class="swatch" style="background-color:#ff00bb"></div></label>
-            <input type="radio" name="pickColor" id="magenta" value="#ff00bb">
-
-            <label for="black">Black<div class="swatch" style="background-color:#222222"></div></label>
-            <input type="radio" name="pickColor" id="black" value="#222222" checked>
-        </div>
-        <div id="save-output" onclick="saveButton()">Save image</div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script>
+
+        $( function(){
+            $("label").on("click", function(){
+                $(this).siblings("label").css({
+                    "color":"blue",
+                    "background-color":"white"
+                })
+                $(this).css({
+                    "color":"white",
+                    "background-color":"blue"
+                })
+               
+               
+            })
+        })
+
+    </script>
 </body>
 
 </html>
