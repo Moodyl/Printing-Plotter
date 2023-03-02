@@ -61,12 +61,7 @@
                 stroke(colorCyan)
                 switch (shape[0]) {
                     case "line":
-                        line(
-                            i * stepSize, //X begin 
-                            j * stepSize, //Y begin
-                            i * stepSize + stepSize, //X end
-                            j * stepSize + stepSize //Y end
-                        )
+                        line(i * stepSize, j * stepSize, i * stepSize + stepSize, j * stepSize + stepSize); //X beginY begin X end Y end
                         break;
                     case "zig-zag":
                         beginShape();
